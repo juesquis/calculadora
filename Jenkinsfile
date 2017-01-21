@@ -13,13 +13,13 @@ node {
    echo "var mvnHome='${mvnHome}'"
    echo "var env.PATH='${env.PATH}'"
    
-   // -- Descarga c骴igo desde SCM
-   echo 'Descargando c骴igo de SCM'
+   // -- Descarga c贸digo desde SCM
+   echo 'Descargando c贸digo de SCM'
    sh 'rm -rf *'
    checkout scm
    
    // -- Compilando
-   echo 'Compilando aplicaci髇'
+   echo 'Compilando aplicaci贸n'
    sh 'mvn clean compile'
    
    // ------------------------------------
@@ -52,10 +52,10 @@ node {
    step([$class: 'ArtifactArchiver', artifacts: '**/target/*.jar, **/target/*.war', fingerprint: true])
 
    // ------------------------------------
-   // -- ETAPA: Cobertura de c骴igo
+   // -- ETAPA: Cobertura de c贸digo
    // ------------------------------------
    stage 'Code Coverage (Cobertura de codigo)' 
-   echo 'Comprueba la cobertura que hacen los test sobre el c骴igo desarrollado'
+   echo 'Comprueba la cobertura que hacen los test sobre el c贸digo desarrollado'
    step([$class: 'JacocoPublisher', execPattern: '**/**.exec', exclusionPattern: '**/*Test*.class'])
 
    // ------------------------------------
@@ -71,7 +71,7 @@ node {
 
 
     // ------------------------------------
-   // -- ETAPA: PmdPublisher
+   // -- ETAPA: Archivar
    // ------------------------------------
    stage 'PmdPublisher'
     step([$class: 'PmdPublisher', pattern: '**/target/pmd.xml'])
