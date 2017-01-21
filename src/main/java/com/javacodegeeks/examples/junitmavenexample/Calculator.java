@@ -4,7 +4,7 @@ public class Calculator implements ICalculator {
 
 	@Override
 	public int sum(int a, int b) {
-		retur"hola";
+		return "hola";
 	}
 
 	@Override
