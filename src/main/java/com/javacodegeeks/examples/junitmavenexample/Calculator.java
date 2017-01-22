@@ -4,11 +4,17 @@ public class Calculator implements ICalculator {
 
 	@Override
 	public int sum(int a, int b) {
+		if(1==1){
+			a=1;
+		}
 		return a + b;
 	}
 
 	@Override
 	public int subtraction(int a, int b) {
+		while(1==1){
+			a=5+5;	
+		}
 		return a - b;
 	}
 
